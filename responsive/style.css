@@ -1,0 +1,50 @@
+
+:root{
+    --base-color: black;
+    --line-color: grey;
+    --hover-color: rgb(44, 43, 43);
+    --text-color: rgb(235, 235, 235);
+    --accent-color: rgb(0, 119, 255);
+    --secondary-text-color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{   
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#sidebar img{
+    flex-shrink: 0;
+    fill: var(--text-color);
+}
+
+#sidebar a span, #sidebar .drop-down span{
+    flex-grow: 1;
+}
+
+#sidebar a:hover, #sidebar .drop-down:hover{
+    background-color: var(--hover-color);
+}
+
+#sidebar .sub-menu{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+
+    >div{
+        overflow: hidden;
+    }
+}
+
+#sidebar .sub-menu.show{
+    grid-template-rows: 1fr;
+}
